@@ -1,0 +1,281 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.smart.mirrorview.MainActivity" >
+	<FrameLayout 
+    android:id="@+id/ad_fra"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+   	android:visibility="gone"
+    />
+    <FrameLayout
+       
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ad_fra" 
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <android.opengl.GLSurfaceView
+                android:id="@+id/surfaceview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+			<ImageView
+			    android:id="@+id/jk_img" 
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:background="@drawable/jk1"
+			    />
+			<ImageView
+			    android:id="@+id/block" 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/block"
+			    android:layout_alignParentLeft="true"
+			    android:layout_alignParentTop="true"
+			    android:layout_margin="15dp"
+			    />
+            <LinearLayout
+                android:id="@+id/lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                     >
+
+                    <SeekBar
+                        android:id="@+id/seekbar"
+                        android:layout_width="240dp"
+                        android:layout_height="30dp"
+                        android:background="#00000000"
+                        android:thumb="@drawable/liang"
+                        android:max="960"
+                        android:progressDrawable="@drawable/player_setting_bright_progressbar"
+                         />
+
+                    <!-- <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/big" /> -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center" >
+
+                        <Button
+                            android:id="@+id/img_lj"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/lvjing" />
+                    </LinearLayout>
+					<FrameLayout 
+					    android:layout_width="0dp"
+					    android:layout_height="match_parent"
+					    android:layout_weight="2"
+					    >
+                        <LinearLayout 
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:weightSum="2"
+                            >
+                             <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center" >
+
+                        <Button
+                            android:id="@+id/img_pz"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/paizhao" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center" >
+
+                        <Button
+                            android:id="@+id/img_fz"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/fanzhuan" />
+                    </LinearLayout>
+                        </LinearLayout>
+					   <HorizontalScrollView 
+					       android:id="@+id/scroll"
+					       android:layout_width="match_parent"
+					       android:layout_height="70dp"
+					       android:layout_gravity="center_vertical"
+					       android:visibility="invisible"
+					       >
+					       <LinearLayout 
+					           android:layout_width="match_parent"
+					           android:layout_height="50dp"
+					           android:orientation="horizontal"
+					           android:gravity="center_vertical"
+					           android:layout_gravity="center_vertical"
+					           > 
+					           <Button
+					            android:id="@+id/normal" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="Nm"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/invert" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="Iv"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/hue" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="H1"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/sepia"  
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="S1"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/gray" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="G1"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/shar" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="S2"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/sobel" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="S3"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/convolution" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="C1"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/emboss" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="E1"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           <Button
+					            android:id="@+id/postersize" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="Ps"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           
+					           <Button
+					            android:id="@+id/grouped" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="G2"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					          	
+					           />
+					           <Button
+					            android:id="@+id/monochrome" 
+					          	android:layout_width="50dp"
+					          	android:layout_height="40dp"
+					          	android:text="C2"
+					          	android:textColor="#ffffff"
+					          	android:background="@drawable/bgpng"
+					          	android:layout_margin="5dp"
+					           />
+					           
+					       </LinearLayout> 
+					       
+					   </HorizontalScrollView>
+					</FrameLayout>
+                    
+
+                    
+                </LinearLayout>
+            </LinearLayout>
+            <com.smart.view.VerticalSeekBar
+                android:id="@+id/verticalSeekBar"
+                android:layout_width="wrap_content"
+                android:layout_height="320dp"
+                android:layout_alignParentRight="true"
+                android:layout_above="@id/lin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="30dp"
+                android:background="#00000000"
+                android:thumb="@drawable/da"
+                android:max="900"
+                android:progressDrawable="@drawable/player_setting_bright_progressbar"
+                 />
+        </RelativeLayout>
+    </FrameLayout>
+	
+</RelativeLayout>
